@@ -6,25 +6,25 @@ export default class RNSwitchAudioOutput {
   static AUDIO_SPEAKER = "SPEAKER";
   static AUDIO_HEADPHONE = "HEADPHONE";
 
-  static isSpeakerphoneOn = (cb) =>
+  static isSpeakerphoneOn = cb =>
     ReactNativeSwitchAudioOutput.isSpeakerphoneOn(cb);
 
   /**
    * @deprecated Please replace to function 'selectAudioOutput'
    */
-  static switchAudioOutput = (isSpeakerPhoneOn) => {
+  static switchAudioOutput = isSpeakerPhoneOn => {
     console.warn(
       "Function is deprecated, this function is remove next version soon."
     );
     ReactNativeSwitchAudioOutput.switchAudioOutput(isSpeakerPhoneOn);
   };
 
-  static selectAudioOutput = (audioOutput) => {
+  static selectAudioOutput = audioOutput => {
     switch (audioOutput) {
-      case AUDIO_SPEAKER:
+      case "SPEAKER":
         ReactNativeSwitchAudioOutput.switchAudioOutput(true);
         break;
-      case AUDIO_HEADPHONE:
+      case "HEADPHONE":
         ReactNativeSwitchAudioOutput.switchAudioOutput(false);
         break;
       default:
